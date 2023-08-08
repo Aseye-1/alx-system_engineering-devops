@@ -1,0 +1,7 @@
+# A manifest to kill a process killmenow
+exec { 'killing a process killmenow on all puppet-agents ':
+  command => 'pkill killmenow',
+  path => '/bin:/ur/bin',
+  onlyif => 'pgrep killmenow'
+  provider => shell,  
+}
